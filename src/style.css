@@ -1,0 +1,6 @@
+body {
+  --red: rgb(193, 0, 42);
+  --red-dark: rgb(92, 0, 20);
+  --grey: rgb(99, 99, 99);
+  --text-color: white;
+}

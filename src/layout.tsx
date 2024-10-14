@@ -1,32 +1,38 @@
-import React from "react";
-import { Container, Nav, NavDropdown } from "react-bootstrap";
+import React, { PropsWithChildren, useState } from "react";
+import { Button, Container, Nav } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
+import Offcanvas from "react-bootstrap/Offcanvas";
 
-export default function Layout({ children }: { children: React.ReactNode[] }) {
+export default function Layout({ children }: PropsWithChildren) {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
-    <Container>
-      <Navbar>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+    <>
+      <Navbar style={{ backgroundColor: "var(--red)" }} fixed="bottom">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
+
+        <Nav className="justify-content-center">
+          <Nav.Item>Home</Nav.Item>
+
+          <Nav.Item>Glossar</Nav.Item>
+
+          <Nav.Item>
+            <img onClick={handleShow} src="/3-Punkte-NavBar.svg"></img>
+            <Offcanvas show={show} onHide={handleClose}>
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-sm`}>
+                  Einstellungen
+                </Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>Mach ich nachher :D</Offcanvas.Body>
+            </Offcanvas>
+          </Nav.Item>
+        </Nav>
       </Navbar>
       {children}
-    </Container>
+    </>
   );
 }

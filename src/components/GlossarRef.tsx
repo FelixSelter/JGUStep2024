@@ -26,14 +26,16 @@ export default function index({ keyword }: Props) {
 
   const popover = (
     <Popover id="popover-basic">
-      <Popover.Header as="h3">{keyword}</Popover.Header>
+      <Popover.Header as="h3" style={{ backgroundColor: "var(--red)" }}>
+        {keyword}
+      </Popover.Header>
       <Popover.Body>{entry.definition}</Popover.Body>
     </Popover>
   );
 
   return (
     <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-      <a>{keyword}</a>
+      <a href="#">{keyword}</a>
     </OverlayTrigger>
   );
 }

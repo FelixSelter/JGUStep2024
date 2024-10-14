@@ -1,0 +1,34 @@
+.itemRow {
+  display: grid;
+  grid-template-columns: 20vw auto;
+}
+
+.bars {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.verticalbar {
+  width: 2vmin;
+  flex-grow: 1;
+  background-color: black;
+}
+
+.horizontalbar {
+  width: 30%;
+  height: 2vmin;
+  background-color: black;
+  border-radius: 30%;
+}
+
+.button {
+  background-color: var(--red);
+  border-color: var(--red-dark);
+  margin-block: 5vmin;
+}
+
+.button:active {
+  background-color: var(--red-dark) !important;
+  border-color: var(--red-dark) !important;
+}
