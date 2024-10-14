@@ -1,3 +1,4 @@
+import GlossarRef from "../components/GlossarRef";
 import Layout from "../layout";
 
 export default function Index() {
@@ -5,6 +6,7 @@ export default function Index() {
     <Layout>
       <p>a</p>
       <p>b</p>
+      <GlossarRef keyword="Spiel" />
     </Layout>
   );
 }
