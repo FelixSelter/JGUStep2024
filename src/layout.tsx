@@ -14,13 +14,38 @@ export default function Layout({ children }: PropsWithChildren) {
       <Navbar style={{ backgroundColor: "var(--red)" }} fixed="bottom">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-        <Nav className="justify-content-center">
-          <Nav.Item>Home</Nav.Item>
-
-          <Nav.Item>Glossar</Nav.Item>
+        <Nav className="w-100" fill variant="pills" justify>
+          <Nav.Item>
+            <Nav.Link as="div" className="d-flex justify-content-center align-items-center">
+              <img
+                onClick={handleShow}
+                src="Home-NavBar.svg"
+                alt="Glossar"
+                style={{ cursor: "pointer", width: "20px" }}
+              />
+            </Nav.Link>
+          </Nav.Item>
 
           <Nav.Item>
-            <img onClick={handleShow} src="/3-Punkte-NavBar.svg"></img>
+            <Nav.Link as="div" className="d-flex justify-content-center align-items-center">
+              <img
+                onClick={handleShow}
+                src="Woerterbuch-NavBar.svg"
+                alt="Glossar"
+                style={{ cursor: "pointer", width: "20px" }}
+              />
+            </Nav.Link>
+          </Nav.Item>
+
+          <Nav.Item>
+            <Nav.Link as="div" className="d-flex justify-content-center align-items-center">
+              <img
+                onClick={handleShow}
+                src="3-Punkte-NavBar.svg"
+                alt="Menu"
+                style={{ cursor: "pointer", width: "20px" }}
+              />
+            </Nav.Link>
             <Offcanvas show={show} onHide={handleClose}>
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-sm`}>
@@ -32,7 +57,9 @@ export default function Layout({ children }: PropsWithChildren) {
           </Nav.Item>
         </Nav>
       </Navbar>
-      {children}
+      <div style={{ position: "fixed", display: "block", content: "", overflow: "hide", top: "0px", left: "0px", height: "calc(100vh - 51px)", width: "100vh", margin: "0", padding: "0" }}>
+        {children}
+      </div>
     </>
   );
 }
