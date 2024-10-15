@@ -17,8 +17,7 @@ class Projectile {
 }
 
 let centerText = "";
-const width = 1920 / 2;
-const height = 1080 / 2;
+const aspectRatio = 16 / 9;
 const worldWidth = 10 + 1;
 const player1 = new Player(-5);
 const player2 = new Player(5);
@@ -53,6 +52,8 @@ document.getElementById("move").onclick = () => {
 document.getElementById("shoot").onclick = () => {
   const isHit = Math.random() - accuracy(0) < 0;
   centerText = isHit ? "You won" : "You lost";
+  document.getElementById("move").onclick = undefined;
+  document.getElementById("shoot").onclick = undefined;
 
   projectiles.push(
     new Projectile(
@@ -64,15 +65,21 @@ document.getElementById("shoot").onclick = () => {
   );
 };
 
-const unitInPixel = (1 / worldWidth) * width;
+function unitInPixel() {
+  return (1 / worldWidth) * width;
+}
 
 function accuracy(offset) {
   const distance = player2.position - player1.position - 1;
   return 1 - (distance + offset) / (worldWidth - 2);
 }
 
+function windowResized() {
+  resizeCanvas(windowWidth, windowWidth / aspectRatio);
+}
+
 function x(x) {
-  return (x + worldWidth / 2) * unitInPixel;
+  return (x + worldWidth / 2) * unitInPixel();
 }
 
 function y(y) {
@@ -84,25 +91,30 @@ function h(h) {
 }
 
 function setup() {
-  createCanvas(width, height);
+  const canvas = createCanvas(windowWidth, windowWidth / aspectRatio);
+  document.getElementById("canvasParent").appendChild(canvas.canvas);
 }
 function draw() {
   background(220);
   fill(0, 0, 0);
-  textSize(0.5 * unitInPixel);
-  text(`P(d): ≈${round(accuracy(0) * 100 * 100) / 100}%`, 0, 0.5 * unitInPixel);
+  textSize(0.5 * unitInPixel());
+  text(
+    `P(d): ≈${round(accuracy(0) * 100 * 100) / 100}%`,
+    0,
+    0.5 * unitInPixel()
+  );
   text(
     `P(d-1): ≈${Math.min(round(accuracy(-1) * 100 * 100) / 100, 100)}%`,
     0,
-    unitInPixel
+    unitInPixel()
   );
 
   for (const player of [player1, player2]) {
     rect(
-      x(player.position) - unitInPixel / 2,
+      x(player.position) - unitInPixel() / 2,
       y(0),
-      unitInPixel,
-      h(unitInPixel)
+      unitInPixel(),
+      h(unitInPixel())
     );
   }
 
@@ -118,10 +130,10 @@ function draw() {
 
     fill(255, 0, 0);
     rect(
-      x(projectile.x) - 0.1 * unitInPixel,
-      y(projectile.y * unitInPixel + 0.025 * unitInPixel),
-      0.2 * unitInPixel,
-      0.05 * unitInPixel
+      x(projectile.x) - 0.1 * unitInPixel(),
+      y(projectile.y * unitInPixel() + 0.025 * unitInPixel()),
+      0.2 * unitInPixel(),
+      0.05 * unitInPixel()
     );
 
     projectile.x += projectileSpeed * deltaTime * projectile.stepX;

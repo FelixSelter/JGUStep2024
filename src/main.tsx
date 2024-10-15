@@ -8,6 +8,7 @@ import Glossary from "./pages/Glossary";
 import Learning from "./pages/Learning";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Shooter from "./games/Shooter";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/learning",
     element: <Learning />,
+  },
+  {
+    path: "/game1",
+    element: <Shooter />,
   },
 ]);
 
