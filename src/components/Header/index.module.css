@@ -1,10 +1,11 @@
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   min-height: 10vh;
   background-color: var(--red);
   color: var(--text-color);
   padding: 5vmin;
-  font-size: 2rem;
+  font-size: 3rem;
 }

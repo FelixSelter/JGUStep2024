@@ -1,20 +1,9 @@
 import { OverlayTrigger, Popover } from "react-bootstrap";
+import { GLOSSARY } from "../glossary";
 
 interface Props {
   keyword: string;
 }
-
-export const GLOSSARY = [
-  {
-    keywords: ["Spiel"],
-    definition: "Ein Spiel ist ....",
-  },
-
-  {
-    keywords: ["Spieler"],
-    definition: "Spieler sind ....",
-  },
-];
 
 export default function index({ keyword }: Props) {
   const entry = GLOSSARY.find((entry) =>

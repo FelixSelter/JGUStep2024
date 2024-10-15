@@ -1,0 +1,10 @@
+.button {
+  background-color: var(--red);
+  border-color: var(--red-dark);
+  margin-block: 5vmin;
+}
+
+.button:active {
+  background-color: var(--red-dark) !important;
+  border-color: var(--red-dark) !important;
+}

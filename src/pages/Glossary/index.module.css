@@ -1,0 +1,27 @@
+.container {
+  height: calc(100vh - 10vh - 105px);
+  padding: 5vmin;
+}
+
+.itemButton {
+  border: none;
+  background-color: transparent;
+  margin-left: auto;
+}
+
+.itemHeader {
+  display: flex;
+}
+
+.itemContainer {
+  max-height: calc(100vh - 10vh - 105px - 50px - 10vmin);
+  display: flex;
+  flex-direction: column;
+  gap: 1vmin;
+  overflow-y: scroll;
+}
+
+.input {
+  height: 50px;
+  margin-bottom: 5vmin;
+}

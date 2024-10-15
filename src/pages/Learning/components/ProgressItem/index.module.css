@@ -21,14 +21,3 @@
   background-color: black;
   border-radius: 30%;
 }
-
-.button {
-  background-color: var(--red);
-  border-color: var(--red-dark);
-  margin-block: 5vmin;
-}
-
-.button:active {
-  background-color: var(--red-dark) !important;
-  border-color: var(--red-dark) !important;
-}

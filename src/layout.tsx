@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, useState } from "react";
-import { Button, Container, Nav } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
@@ -11,39 +11,52 @@ export default function Layout({ children }: PropsWithChildren) {
 
   return (
     <>
-      <Navbar style={{ backgroundColor: "var(--red)" }} fixed="bottom">
+      <Navbar
+        style={{
+          backgroundColor: "var(--red)",
+          height: "60px",
+        }}
+        fixed="bottom"
+      >
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
         <Nav className="w-100" fill variant="pills" justify>
           <Nav.Item>
-            <Nav.Link as="div" className="d-flex justify-content-center align-items-center">
+            <Nav.Link
+              href="/home"
+              className="d-flex justify-content-center align-items-center"
+            >
               <img
-                onClick={handleShow}
                 src="Home-NavBar.svg"
                 alt="Glossar"
-                style={{ cursor: "pointer", width: "20px" }}
+                style={{ cursor: "pointer", width: "7vw" }}
               />
             </Nav.Link>
           </Nav.Item>
 
           <Nav.Item>
-            <Nav.Link as="div" className="d-flex justify-content-center align-items-center">
+            <Nav.Link
+              href="/glossary"
+              className="d-flex justify-content-center align-items-center"
+            >
               <img
-                onClick={handleShow}
                 src="Woerterbuch-NavBar.svg"
                 alt="Glossar"
-                style={{ cursor: "pointer", width: "20px" }}
+                style={{ cursor: "pointer", width: "7vw" }}
               />
             </Nav.Link>
           </Nav.Item>
 
           <Nav.Item>
-            <Nav.Link as="div" className="d-flex justify-content-center align-items-center">
+            <Nav.Link
+              as="div"
+              className="d-flex justify-content-center align-items-center"
+            >
               <img
                 onClick={handleShow}
                 src="3-Punkte-NavBar.svg"
                 alt="Menu"
-                style={{ cursor: "pointer", width: "20px" }}
+                style={{ cursor: "pointer", width: "7vw" }}
               />
             </Nav.Link>
             <Offcanvas show={show} onHide={handleClose}>
@@ -57,7 +70,13 @@ export default function Layout({ children }: PropsWithChildren) {
           </Nav.Item>
         </Nav>
       </Navbar>
-      <div style={{ position: "fixed", display: "block", content: "", overflow: "hide", top: "0px", left: "0px", height: "calc(100vh - 51px)", width: "100vh", margin: "0", padding: "0" }}>
+      <div
+        style={{
+          height: "calc(100vh - 60px)",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         {children}
       </div>
     </>

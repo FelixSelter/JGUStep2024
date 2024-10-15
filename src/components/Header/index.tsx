@@ -1,11 +1,16 @@
-import ProgressItem from "../../pages/learning/components/ProgressItem";
 import styles from "./index.module.css";
 
-export default function index() {
+export default function index({ title }: { title: string }) {
   return (
     <>
       <div className={styles.header}>
-        <span>Lerninhalte</span>
+        <span>{title}</span>
+        <img
+          src="logo.png"
+          style={{
+            height: "15vmin",
+          }}
+        />
       </div>
     </>
   );
