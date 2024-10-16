@@ -7,19 +7,45 @@ export default function Learning() {
     <>
       <Header title="Lerninhalte" />
       <div className={styles.container}>
-        <ProgressItem title="Einführung" index={0} />
-        <ProgressItem title="Einführung" index={1} />
-        <ProgressItem title="Einführung" index={2} />
-        <ProgressItem title="Einführung" index={3} />
-        <ProgressItem title="Einführung" index={4} />
-        <ProgressItem title="Einführung" index={5} />
-        <ProgressItem title="Einführung" index={6} />
-        <ProgressItem title="Einführung" index={7} />
-        <ProgressItem title="Einführung" index={8} />
-        <ProgressItem title="Einführung" index={9} />
-        <ProgressItem title="Einführung" index={10} />
-        <ProgressItem title="Einführung" index={11} />
-        <ProgressItem title="Einführung" index={12} />
+        <ProgressItem
+          title="Einführung"
+          index={0}
+          href="introduction"
+          completed={true}
+        />
+        <ProgressItem
+          title="NASH Gleichgewicht"
+          index={1}
+          completed={false}
+          href="nashequality"
+        />
+        <ProgressItem
+          title="Split or Steal"
+          index={2}
+          completed={false}
+          href="game2"
+        />
+        <ProgressItem
+          title="Das Duell"
+          index={3}
+          href="game1"
+          completed={false}
+        />
+        <ProgressItem
+          title="Kooroperative Spiele"
+          index={4}
+          completed={false}
+        />
+        <ProgressItem
+          title="Nicht-Kooroperative Spiele"
+          index={5}
+          completed={false}
+        />
+        <ProgressItem
+          title="Evelutionär Spieltheorie"
+          index={6}
+          completed={false}
+        />
       </div>
     </>
   );

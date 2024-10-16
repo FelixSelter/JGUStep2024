@@ -1,6 +1,7 @@
 body {
-  --red: rgb(193, 0, 42);
-  --red-dark: rgb(92, 0, 20);
+  --red: hsl(347, 100%, 38%);
+  --red-bright: hsl(347, 100%, 58%);
+  --red-dark: hsl(347, 100%, 18%);
   --grey: rgb(99, 99, 99);
   --text-color: white;
 

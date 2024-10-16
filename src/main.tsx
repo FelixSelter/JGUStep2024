@@ -2,18 +2,23 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./style.css";
 
-import Layout from "./layout";
+import Layout from "./App";
 import Home from "./pages/Home";
 import Glossary from "./pages/Glossary";
 import Learning from "./pages/Learning";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Shooter from "./games/Shooter";
+import Forum from "./pages/Forum";
+import CreatePost from "./pages/CreatePost";
+import Introduction from "./pages/Introduction";
+import NashEquality from "./games/NashEquality";
+import TwoButtonsGame from "./games/TwoButtons";
+import ForumPage from "./pages/ForumPage";
 
 const router = createBrowserRouter([
   {
-    path: "/home",
-    index: true,
+    path: "/",
     element: <Home />,
   },
   {
@@ -27,6 +32,30 @@ const router = createBrowserRouter([
   {
     path: "/game1",
     element: <Shooter />,
+  },
+  {
+    path: "/game2",
+    element: <TwoButtonsGame />,
+  },
+  {
+    path: "/forum",
+    element: <Forum />,
+  },
+  {
+    path: "/forum/:postId",
+    element: <ForumPage />,
+  },
+  {
+    path: "/createpost",
+    element: <CreatePost />,
+  },
+  {
+    path: "/introduction",
+    element: <Introduction />,
+  },
+  {
+    path: "/nashequality",
+    element: <NashEquality />,
   },
 ]);
 

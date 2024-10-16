@@ -1,0 +1,9 @@
+.itemButton {
+  border: none;
+  background-color: transparent;
+  margin-left: auto;
+}
+
+.itemHeader {
+  display: flex;
+}

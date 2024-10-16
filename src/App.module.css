@@ -1,0 +1,25 @@
+.progress {
+  position: absolute;
+  width: 90vw;
+  left: 5vw;
+  bottom: 20vh;
+}
+
+.progress {
+  background-color: var(--grey);
+}
+
+.progress > div {
+  animation-name: example;
+  animation-duration: 1s;
+  background-color: white;
+}
+
+@keyframes example {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 90vw;
+  }
+}

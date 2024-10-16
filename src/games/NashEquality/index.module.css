@@ -1,0 +1,12 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(1fr, 5);
+  gap: 5vmin;
+}
+
+.container {
+  padding: 5vmin;
+  overflow-y: scroll;
+  text-align: justify;
+}

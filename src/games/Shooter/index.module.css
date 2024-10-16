@@ -1,0 +1,9 @@
+.container {
+  padding: 5vmin;
+  overflow-y: scroll;
+  text-align: justify;
+}
+
+.container > i {
+  font-size: 1.2rem;
+}

@@ -1,0 +1,14 @@
+.red {
+  color: red;
+  display: inline-block;
+}
+
+.green {
+  color: green;
+  display: inline-block;
+}
+
+.container {
+  padding: 5vmin;
+  text-align: justify;
+}

@@ -2,10 +2,14 @@ import styles from "./index.module.css";
 import RedButton from "../../../../components/RedButton";
 import { animate, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
   title: string;
   index: number;
+  href?: string;
+  completed: boolean;
 }
 
 function isElementInViewport(el: HTMLElement) {
@@ -23,7 +27,7 @@ function isElementInViewport(el: HTMLElement) {
   );
 }
 
-export default function ProgressItem({ title, index }: Props) {
+export default function ProgressItem({ title, index, href, completed }: Props) {
   const ref = useRef(null);
   const isInView = useInView(ref);
   const [isFirstRender, setIsFirstRender] = useState(true);
@@ -54,11 +58,21 @@ export default function ProgressItem({ title, index }: Props) {
         <div className={styles.horizontalbar} />
         <div className={styles.verticalbar} />
       </div>
-      <div ref={ref}>
-        {index === 0 && <div style={{ height: "2vmin" }} />}
-        <RedButton size="lg" className="buttonAnim">
+      <div
+        ref={ref}
+        style={{ display: "flex", gap: "2vmin", alignItems: "center" }}
+      >
+        {index === 0 && <div style={{ height: "10vmin" }} />}
+        <RedButton size="lg" className="buttonAnim" href={href} style={{width:"50vw"}}>
           {title}
         </RedButton>
+        {completed && (
+          <FontAwesomeIcon
+            icon={faCheck}
+            className={styles.checkmark}
+            style={{ color: "var(--red)" }}
+          />
+        )}
       </div>
     </div>
   );

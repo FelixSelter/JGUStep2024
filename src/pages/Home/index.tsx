@@ -3,16 +3,7 @@ import Header from "../../components/Header";
 import RedButton from "../../components/RedButton";
 import styles from "./index.module.css";
 
-import TwoButtonsGame from "../../games/TwoButtons";
-
 export default function Index() {
-  return (
-    <>
-      <Header title="SASTA" />
-      <TwoButtonsGame />
-    </>
-  );
-
   return (
     <>
       <Header title="SASTA" />
@@ -34,6 +25,9 @@ export default function Index() {
         </div>
         <RedButton size="lg" className={styles.button} href="/glossary">
           Glossar
+        </RedButton>
+        <RedButton size="lg" className={styles.button} href="/forum">
+          Forum
         </RedButton>
       </div>
     </>

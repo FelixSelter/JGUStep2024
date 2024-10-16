@@ -1,0 +1,9 @@
+.container {
+  padding: 5vmin;
+  overflow-y: scroll;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}

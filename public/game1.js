@@ -24,12 +24,57 @@ const player2 = new Player(5);
 const projectiles = [];
 const projectileSpeed = 0.005;
 
+function initGame() {
+  centerText = "";
+  player1.position = -5;
+  player2.position = 5;
+
+  document.getElementById("move").onclick = () => {
+    player1.position += 1;
+    enemyMove();
+  };
+
+  document.getElementById("shoot").onclick = () => {
+    const isHit = Math.random() - accuracy(0) < 0;
+    centerText = isHit ? "Gewonnen" : "Verloren";
+    document.getElementById("move").onclick = undefined;
+    document.getElementById("shoot").onclick = undefined;
+
+    document.getElementById(
+      "stats"
+    ).innerHTML = `Mit dieser Strategie hätten Sie ${
+      Math.round(accuracy(0) * 100 * 100) / 100
+    }% der Spiele gewonnen`;
+
+    projectiles.push(
+      new Projectile(
+        player1.position + 0.5,
+        0.5,
+        player2.position,
+        isHit ? Math.random() : [1.1, -0.1][Math.round(Math.random())]
+      )
+    );
+  };
+}
+initGame();
+document.getElementById("reset").onclick = initGame;
+
 function enemyMove() {
   if (accuracy(0) >= 1 - accuracy(-1)) {
     const isHit = Math.random() - accuracy(0) < 0;
-    centerText = isHit ? "You lost" : "You won";
+    centerText = isHit ? "Verloren" : "Gewonnen";
     document.getElementById("move").onclick = undefined;
     document.getElementById("shoot").onclick = undefined;
+
+    let counter = 0;
+    for (let i = 0; i < 10000; i++) {
+      if (Math.random() - accuracy(0) < 0) counter++;
+    }
+    document.getElementById(
+      "stats"
+    ).innerHTML = `Mit dieser Strategie hätten Sie ${
+      Math.round((1 - accuracy(0)) * 100 * 100) / 100
+    }% der Spiele gewonnen`;
 
     projectiles.push(
       new Projectile(
@@ -44,34 +89,13 @@ function enemyMove() {
   }
 }
 
-document.getElementById("move").onclick = () => {
-  player1.position += 1;
-  enemyMove();
-};
-
-document.getElementById("shoot").onclick = () => {
-  const isHit = Math.random() - accuracy(0) < 0;
-  centerText = isHit ? "You won" : "You lost";
-  document.getElementById("move").onclick = undefined;
-  document.getElementById("shoot").onclick = undefined;
-
-  projectiles.push(
-    new Projectile(
-      player1.position + 0.5,
-      0.5,
-      player2.position,
-      isHit ? Math.random() : [1.1, -0.1][Math.round(Math.random())]
-    )
-  );
-};
-
 function unitInPixel() {
   return (1 / worldWidth) * width;
 }
 
 function accuracy(offset) {
   const distance = player2.position - player1.position - 1;
-  return 1 - (distance + offset) / (worldWidth - 2);
+  return 1 - (distance * 1.1 + offset) / (worldWidth * 1.1 - 2);
 }
 
 function windowResized() {

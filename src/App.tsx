@@ -1,13 +1,38 @@
-import React, { PropsWithChildren, useState } from "react";
-import { Nav } from "react-bootstrap";
+import { PropsWithChildren, useEffect, useState } from "react";
+import { Nav, NavDropdown, ProgressBar } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import styles from "./App.module.css";
 
 export default function Layout({ children }: PropsWithChildren) {
   const [show, setShow] = useState(false);
+  const [_, forceRefresh] = useState(0);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      window.sessionStorage.showedLogoPopup = true;
+      forceRefresh(1);
+    }, 1000);
+  }, []);
+
+  if (window.sessionStorage.showedLogoPopup === undefined) {
+    return (
+      <div
+        style={{
+          backgroundColor: "var(--red)",
+          width: "100vw",
+          height: "100vh",
+          display: "flex",
+        }}
+      >
+        <img src="jgu.png" style={{ objectFit: "contain" }} />
+        <ProgressBar now={0} className={styles.progress} />
+      </div>
+    );
+  }
 
   return (
     <>
@@ -23,11 +48,11 @@ export default function Layout({ children }: PropsWithChildren) {
         <Nav className="w-100" fill variant="pills" justify>
           <Nav.Item>
             <Nav.Link
-              href="/home"
+              href="/"
               className="d-flex justify-content-center align-items-center"
             >
               <img
-                src="Home-NavBar.svg"
+                src="/Home-NavBar.svg"
                 alt="Glossar"
                 style={{ cursor: "pointer", width: "7vw" }}
               />
@@ -40,7 +65,7 @@ export default function Layout({ children }: PropsWithChildren) {
               className="d-flex justify-content-center align-items-center"
             >
               <img
-                src="Woerterbuch-NavBar.svg"
+                src="/Woerterbuch-NavBar.svg"
                 alt="Glossar"
                 style={{ cursor: "pointer", width: "7vw" }}
               />
@@ -54,7 +79,7 @@ export default function Layout({ children }: PropsWithChildren) {
             >
               <img
                 onClick={handleShow}
-                src="3-Punkte-NavBar.svg"
+                src="/3-Punkte-NavBar.svg"
                 alt="Menu"
                 style={{ cursor: "pointer", width: "7vw" }}
               />
@@ -65,7 +90,33 @@ export default function Layout({ children }: PropsWithChildren) {
                   Einstellungen
                 </Offcanvas.Title>
               </Offcanvas.Header>
-              <Offcanvas.Body>Mach ich nachher :D</Offcanvas.Body>
+              <Offcanvas.Body>
+                <NavDropdown title="Sprache">
+                  <NavDropdown.Item href="#action3">Deutsch</NavDropdown.Item>
+                  <NavDropdown.Item href="#action4" disabled>
+                    Englisch
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#action5" disabled>
+                    Schweizerdeutsch
+                  </NavDropdown.Item>
+                </NavDropdown>
+                <Nav.Item>
+                  <Nav.Link>Hilfe</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link>Q & A</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link>Quellen</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link>Lizenz</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link>Impressung</Nav.Link>
+                </Nav.Item>
+              </Offcanvas.Body>
             </Offcanvas>
           </Nav.Item>
         </Nav>

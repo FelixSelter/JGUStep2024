@@ -1,7 +1,7 @@
 .button {
   background-color: var(--red);
-  border-color: var(--red-dark);
   margin-block: 5vmin;
+  border: 3px solid var(--red-dark);
 }
 
 .button:active {

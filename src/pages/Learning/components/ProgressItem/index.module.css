@@ -11,13 +11,18 @@
 
 .verticalbar {
   width: 2vmin;
+  height: 13vmin;
   flex-grow: 1;
-  background-color: black;
+  background-color: var(--grey);
 }
 
 .horizontalbar {
   width: 30%;
   height: 2vmin;
-  background-color: black;
+  background-color: var(--grey);
   border-radius: 30%;
+}
+
+.checkmark {
+  height: 10vmin;
 }

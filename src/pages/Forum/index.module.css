@@ -1,0 +1,50 @@
+.cardContainer {
+  padding: 5vmin;
+  padding-top: 0px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 5vmin;
+}
+
+.card {
+  border-color: var(--red);
+}
+
+.card > div > div > a:link {
+  color: var(--red);
+}
+
+.card > div > div > a:visited {
+  color: var(--red);
+}
+
+.controls {
+  padding-inline: 5vmin;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.summary {
+  position: relative;
+}
+
+.summary::before {
+  background-image: linear-gradient(
+    top,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.75),
+    50% rgba(255, 255, 255, 1) 100%
+  );
+  background-image: -moz-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.75) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
+
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
