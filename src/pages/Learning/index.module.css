@@ -2,5 +2,4 @@
   padding: 5vmin;
   overflow-y: scroll;
   overflow-x: hidden;
-  height: calc(100vh - 10vh - 70px);
 }

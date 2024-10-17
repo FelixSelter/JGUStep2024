@@ -11,6 +11,7 @@ import {
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import styles from "./App.module.css";
+import { height } from "@fortawesome/free-solid-svg-icons/fa0";
 
 export default function Layout({ children }: PropsWithChildren) {
   const [showOffcanvas, SetShowOffcanvas] = useState(false);
@@ -55,157 +56,161 @@ export default function Layout({ children }: PropsWithChildren) {
       >
         {children}
       </div>
-      <Navbar
-        style={{
-          backgroundColor: "var(--red)",
-          height: "60px",
-        }}
-        fixed="bottom"
-      >
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <div style={{ height: "60px" }}>
+        <Navbar
+          style={{
+            backgroundColor: "var(--red)",
+            height: "60px",
+          }}
+          fixed="bottom"
+        >
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-        <Nav className="w-100" fill justify>
-          <Nav.Item onClick={hideOffcanvas}>
-            <Nav.Link
-              href="/JGUStep2024/#"
-              className={"d-flex justify-content-center align-items-center"}
-            >
-              <img
-                src="/JGUStep2024/Home-NavBar.svg"
-                alt="Glossar"
-                style={{ cursor: "pointer", width: "7vw" }}
-              />
-            </Nav.Link>
-          </Nav.Item>
+          <Nav className="w-100" fill justify>
+            <Nav.Item onClick={hideOffcanvas}>
+              <Nav.Link
+                href="/JGUStep2024/#"
+                className={"d-flex justify-content-center align-items-center"}
+              >
+                <img
+                  src="/JGUStep2024/Home-NavBar.svg"
+                  alt="Glossar"
+                  style={{ cursor: "pointer", width: "7vw" }}
+                />
+              </Nav.Link>
+            </Nav.Item>
 
-          <Nav.Item onClick={hideOffcanvas}>
-            <Nav.Link
-              href="/JGUStep2024/#glossary"
-              className={"d-flex justify-content-center align-items-center"}
-            >
-              <img
-                src="/JGUStep2024/Woerterbuch-NavBar.svg"
-                alt="Glossar"
-                style={{ cursor: "pointer", width: "7vw" }}
-              />
-            </Nav.Link>
-          </Nav.Item>
+            <Nav.Item onClick={hideOffcanvas}>
+              <Nav.Link
+                href="/JGUStep2024/#glossary"
+                className={"d-flex justify-content-center align-items-center"}
+              >
+                <img
+                  src="/JGUStep2024/Woerterbuch-NavBar.svg"
+                  alt="Glossar"
+                  style={{ cursor: "pointer", width: "7vw" }}
+                />
+              </Nav.Link>
+            </Nav.Item>
 
-          <Nav.Item>
-            <Nav.Link
-              as="div"
-              className={"d-flex justify-content-center align-items-center"}
-            >
-              <img
-                onClick={() => SetShowOffcanvas(true)}
-                src="/JGUStep2024/3-Punkte-NavBar.svg"
-                alt="Menu"
-                style={{ cursor: "pointer", width: "7vw" }}
-              />
-            </Nav.Link>
-            <Offcanvas show={showOffcanvas} onHide={hideOffcanvas}>
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-sm`}>
-                  Einstellungen
-                </Offcanvas.Title>
-              </Offcanvas.Header>
-              <Offcanvas.Body>
-                <NavDropdown title="Sprache">
-                  <NavDropdown.Item href="/#" onClick={hideOffcanvas}>
-                    Deutsch
-                  </NavDropdown.Item>
-                  <NavDropdown.Item onClick={hideOffcanvas} disabled>
-                    Englisch
-                  </NavDropdown.Item>
-                  {gemeinheit && (
-                    <>
-                      <NavDropdown.Divider />
-                      <NavDropdown.Item>
-                        <NavLink onClick={() => setShowLangModal(true)}>
-                          Schweizerdeutsch
-                        </NavLink>
-                        <Modal
-                          show={showLangModal}
-                          onHide={() => setShowLangModal(false)}
+            <Nav.Item>
+              <Nav.Link
+                as="div"
+                className={"d-flex justify-content-center align-items-center"}
+              >
+                <img
+                  onClick={() => SetShowOffcanvas(true)}
+                  src="/JGUStep2024/3-Punkte-NavBar.svg"
+                  alt="Menu"
+                  style={{ cursor: "pointer", width: "7vw" }}
+                />
+              </Nav.Link>
+              <Offcanvas show={showOffcanvas} onHide={hideOffcanvas}>
+                <Offcanvas.Header closeButton>
+                  <Offcanvas.Title id={`offcanvasNavbarLabel-expand-sm`}>
+                    Einstellungen
+                  </Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                  <NavDropdown title="Sprache">
+                    <NavDropdown.Item href="/#" onClick={hideOffcanvas}>
+                      Deutsch
+                    </NavDropdown.Item>
+                    <NavDropdown.Item onClick={hideOffcanvas} disabled>
+                      Englisch
+                    </NavDropdown.Item>
+                    {gemeinheit && (
+                      <>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item>
+                          <NavLink onClick={() => setShowLangModal(true)}>
+                            Schweizerdeutsch
+                          </NavLink>
+                          <Modal
+                            show={showLangModal}
+                            onHide={() => setShowLangModal(false)}
+                          >
+                            <Modal.Header closeButton>
+                              <Modal.Title>Schweizerdeutsch</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                              <p>
+                                Wäge Ziitmangel händ mir leider kei
+                                schwiizerdütschi Übersetzig chönne
+                                implementiere. Bi Verstaahnisproblem wänd Si
+                                sich bitte bi folgende Kontaktadresse melde:
+                              </p>
+                              <br />
+                              <Table striped bordered hover>
+                                <tbody>
+                                  <tr>
+                                    <td>Nora</td>
+                                    <td>Graber</td>
+                                  </tr>
+                                  <tr>
+                                    <td colSpan={2}>
+                                      ngraber@students.uni-mainz.de
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </Table>
+                            </Modal.Body>
+                          </Modal>
+                        </NavDropdown.Item>
+                      </>
+                    )}
+                  </NavDropdown>
+                  <Nav.Item>
+                    <Nav.Link onClick={() => setShowHelpModal(true)}>
+                      Hilfe
+                    </Nav.Link>
+                    <Modal
+                      show={showHelpModal}
+                      onHide={() => setShowHelpModal(false)}
+                    >
+                      <Modal.Header closeButton>
+                        <Modal.Title>Hilfe</Modal.Title>
+                      </Modal.Header>
+                      <Modal.Body>
+                        Bei Fragen zu dieser WebApp bitte ein Issue auf unserer{" "}
+                        <a href="https://github.com/FelixSelter/JGUStep2024/issues">
+                          Github
+                        </a>{" "}
+                        Seite erstellen.
+                      </Modal.Body>
+                      <Modal.Footer>
+                        <Button
+                          variant="outline-secondary"
+                          onClick={() => {
+                            setShowHelpModal(false);
+                            hideOffcanvas();
+                          }}
                         >
-                          <Modal.Header closeButton>
-                            <Modal.Title>Schweizerdeutsch</Modal.Title>
-                          </Modal.Header>
-                          <Modal.Body>
-                            <p>
-                              Wäge Ziitmangel händ mir leider kei
-                              schwiizerdütschi Übersetzig chönne implementiere.
-                              Bi Verstaahnisproblem wänd Si sich bitte bi
-                              folgende Kontaktadresse melde:
-                            </p>
-                            <br />
-                            <Table striped bordered hover>
-                              <tbody>
-                                <tr>
-                                  <td>Nora</td>
-                                  <td>Graber</td>
-                                </tr>
-                                <tr>
-                                  <td colSpan={2}>
-                                    ngraber@students.uni-mainz.de
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </Table>
-                          </Modal.Body>
-                        </Modal>
-                      </NavDropdown.Item>
-                    </>
-                  )}
-                </NavDropdown>
-                <Nav.Item>
-                  <Nav.Link onClick={() => setShowHelpModal(true)}>
-                    Hilfe
-                  </Nav.Link>
-                  <Modal
-                    show={showHelpModal}
-                    onHide={() => setShowHelpModal(false)}
-                  >
-                    <Modal.Header closeButton>
-                      <Modal.Title>Hilfe</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                      Bei Fragen zu dieser WebApp bitte ein Issue auf unserer{" "}
-                      <a href="https://github.com/FelixSelter/JGUStep2024/issues">
-                        Github
-                      </a>{" "}
-                      Seite erstellen.
-                    </Modal.Body>
-                    <Modal.Footer>
-                      <Button
-                        variant="outline-secondary"
-                        onClick={() => {
-                          setShowHelpModal(false);
-                          hideOffcanvas();
-                        }}
-                      >
-                        Close Menu
-                      </Button>
-                    </Modal.Footer>
-                  </Modal>
-                </Nav.Item>
-                <Nav.Item onClick={hideOffcanvas}>
-                  <Nav.Link href="/JGUStep2024/#forum">Q & A</Nav.Link>
-                </Nav.Item>
-                <Nav.Item onClick={hideOffcanvas}>
-                  <Nav.Link href="/JGUStep2024/#sources">Quellen</Nav.Link>
-                </Nav.Item>
-                <Nav.Item onClick={hideOffcanvas}>
-                  <Nav.Link href="/JGUStep2024/#license">Lizenz</Nav.Link>
-                </Nav.Item>
-                <Nav.Item onClick={hideOffcanvas}>
-                  <Nav.Link href="/JGUStep2024/#impressum">Impressum</Nav.Link>
-                </Nav.Item>
-              </Offcanvas.Body>
-            </Offcanvas>
-          </Nav.Item>
-        </Nav>
-      </Navbar>
+                          Close Menu
+                        </Button>
+                      </Modal.Footer>
+                    </Modal>
+                  </Nav.Item>
+                  <Nav.Item onClick={hideOffcanvas}>
+                    <Nav.Link href="/JGUStep2024/#forum">Q & A</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item onClick={hideOffcanvas}>
+                    <Nav.Link href="/JGUStep2024/#sources">Quellen</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item onClick={hideOffcanvas}>
+                    <Nav.Link href="/JGUStep2024/#license">Lizenz</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item onClick={hideOffcanvas}>
+                    <Nav.Link href="/JGUStep2024/#impressum">
+                      Impressum
+                    </Nav.Link>
+                  </Nav.Item>
+                </Offcanvas.Body>
+              </Offcanvas>
+            </Nav.Item>
+          </Nav>
+        </Navbar>
+      </div>
     </>
   );
 }
