@@ -1,15 +1,16 @@
 import { PropsWithChildren, useEffect, useState } from "react";
-import { Nav, NavDropdown, ProgressBar } from "react-bootstrap";
+import { Button, Modal, Nav, NavDropdown, ProgressBar } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import styles from "./App.module.css";
+import classNames from "classnames";
 
 export default function Layout({ children }: PropsWithChildren) {
-  const [show, setShow] = useState(false);
+  const [showOffcanvas, SetShowOffcanvas] = useState(false);
   const [_, forceRefresh] = useState(0);
+  const [modalShow, setModalShow] = useState<boolean>(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const hideOffcanvas = () => SetShowOffcanvas(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -46,10 +47,13 @@ export default function Layout({ children }: PropsWithChildren) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
         <Nav className="w-100" fill variant="pills" justify>
-          <Nav.Item>
+          <Nav.Item onClick={hideOffcanvas}>
             <Nav.Link
               href="/JGUStep2024/#"
-              className="d-flex justify-content-center align-items-center"
+              className={classNames(
+                "d-flex justify-content-center align-items-center",
+                styles.nav
+              )}
             >
               <img
                 src="/JGUStep2024/Home-NavBar.svg"
@@ -59,10 +63,13 @@ export default function Layout({ children }: PropsWithChildren) {
             </Nav.Link>
           </Nav.Item>
 
-          <Nav.Item>
+          <Nav.Item onClick={hideOffcanvas}>
             <Nav.Link
               href="/JGUStep2024/#glossary"
-              className="d-flex justify-content-center align-items-center"
+              className={classNames(
+                "d-flex justify-content-center align-items-center",
+                styles.nav
+              )}
             >
               <img
                 src="/JGUStep2024/Woerterbuch-NavBar.svg"
@@ -75,16 +82,19 @@ export default function Layout({ children }: PropsWithChildren) {
           <Nav.Item>
             <Nav.Link
               as="div"
-              className="d-flex justify-content-center align-items-center"
+              className={classNames(
+                "d-flex justify-content-center align-items-center",
+                styles.nav
+              )}
             >
               <img
-                onClick={handleShow}
+                onClick={() => SetShowOffcanvas(true)}
                 src="/JGUStep2024/3-Punkte-NavBar.svg"
                 alt="Menu"
                 style={{ cursor: "pointer", width: "7vw" }}
               />
             </Nav.Link>
-            <Offcanvas show={show} onHide={handleClose}>
+            <Offcanvas show={showOffcanvas} onHide={hideOffcanvas}>
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-sm`}>
                   Einstellungen
@@ -92,28 +102,45 @@ export default function Layout({ children }: PropsWithChildren) {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <NavDropdown title="Sprache">
-                  <NavDropdown.Item href="#action3">Deutsch</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4" disabled>
-                    Englisch
+                  <NavDropdown.Item href="/#" onClick={hideOffcanvas}>
+                    Deutsch
                   </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action5" disabled>
-                    Schweizerdeutsch
+                  <NavDropdown.Item onClick={hideOffcanvas} disabled>
+                    Englisch
                   </NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Item>
-                  <Nav.Link>Hilfe</Nav.Link>
+                  <Nav.Link onClick={() => setModalShow(true)}>Hilfe</Nav.Link>
+                  <Modal show={modalShow} onHide={() => setModalShow(false)}>
+                    <Modal.Header closeButton>
+                      <Modal.Title>Hilfe</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                      Bei Fragen zu dieser WebApp bitte an *** wenden.
+                    </Modal.Body>
+                    <Modal.Footer>
+                      <Button
+                        variant="outline-secondary"
+                        onClick={() => {
+                          setModalShow(false);
+                          hideOffcanvas();
+                        }}
+                      >
+                        Close Menu
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
                 </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link>Q & A</Nav.Link>
+                <Nav.Item onClick={hideOffcanvas}>
+                  <Nav.Link href="/JGUStep2024/#forum">Q & A</Nav.Link>
                 </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link>Quellen</Nav.Link>
+                <Nav.Item onClick={hideOffcanvas}>
+                  <Nav.Link disabled>Quellen</Nav.Link>
                 </Nav.Item>
-                <Nav.Item>
+                <Nav.Item onClick={hideOffcanvas}>
                   <Nav.Link href="/JGUStep2024/#license">Lizenz</Nav.Link>
                 </Nav.Item>
-                <Nav.Item>
+                <Nav.Item onClick={hideOffcanvas}>
                   <Nav.Link href="/JGUStep2024/#impressum">Impressum</Nav.Link>
                 </Nav.Item>
               </Offcanvas.Body>

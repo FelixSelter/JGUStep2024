@@ -16,6 +16,7 @@ import NashEquality from "./games/NashEquality";
 import TwoButtonsGame from "./games/TwoButtons";
 import ForumPage from "./pages/ForumPage";
 import Impressum from "./pages/Impressum";
+import License from "./pages/License";
 
 const router = createHashRouter([
   {
@@ -61,6 +62,10 @@ const router = createHashRouter([
   {
     path: "/impressum",
     element: <Impressum />,
+  },
+  {
+    path: "/license",
+    element: <License />,
   },
 ]);
 

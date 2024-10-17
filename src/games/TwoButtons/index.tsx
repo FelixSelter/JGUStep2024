@@ -63,7 +63,7 @@ export default function TwoButtonsGame() {
           Spielern werden 2 Buzzer zur Option gestellt.
         </p>
         <p>
-          <h6 className={styles.green}>GRÜNER BUZZER „SPlIT“</h6>: die Million
+          <h6 className={styles.green}>GRÜNER BUZZER „SPLIT“</h6>: die Million
           splitten und beide mit 500.000 Euro nach Hause gehen.
         </p>
         <p>
@@ -114,9 +114,9 @@ export default function TwoButtonsGame() {
                 SP2 = 0
               </td>
               <td>
-                SP1= 0,
+                SP1= 2€,
                 <br />
-                SP2 = 0
+                SP2 = 2€
               </td>
             </tr>
           </tbody>
@@ -167,6 +167,7 @@ export default function TwoButtonsGame() {
           das Gefangenendilemma. Die Lehre daraus ist, dass individuelle
           Rationalität oft zu suboptimalen Ergebnissen führt, wenn keine
           Möglichkeit zur sicheren Kooperation besteht.
+          <br />
         </p>
       </div>
     </>

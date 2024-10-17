@@ -13,7 +13,7 @@ export default function Glossary() {
       <Header title="Glossar" />
       <div className={styles.container}>
         <Form.Control
-          placeholder="...suchen"
+          placeholder="Suchen..."
           value={searchterm}
           onChange={(e) => setSearchterm(e.target.value)}
           className={styles.input}
