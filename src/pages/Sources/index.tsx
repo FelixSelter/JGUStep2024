@@ -7,7 +7,7 @@ export default function Sources() {
       <Header title="Quellen" />
       <div className={styles.container}></div>
       <ul>
-        <li>Prof. Dr. Stefan Winter: Grundzüge der Spieltheorienfred</li>
+        <li>Prof. Dr. Stefan Winter: Grundzüge der Spieltheorien</li>
         <li>
           <a href="https://www.youtube.com/watch?v=M3oWYHYoBvk&t=1859s">
             Vorlesung an der Yale Universität

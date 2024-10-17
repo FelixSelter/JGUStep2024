@@ -172,9 +172,9 @@ export default function Layout({ children }: PropsWithChildren) {
                       </Modal.Header>
                       <Modal.Body>
                         Bei Fragen zu dieser WebApp bitte ein Issue auf unserer{" "}
-                        <a href="https://github.com/FelixSelter/JGUStep2024/issues">
+                        <NavLink href="https://github.com/FelixSelter/JGUStep2024/issues">
                           Github
-                        </a>{" "}
+                        </NavLink>{" "}
                         Seite erstellen.
                       </Modal.Body>
                       <Modal.Footer>
