@@ -10,7 +10,7 @@
   border: 3px solid var(--red-dark);
 }
 
-.button:active {
+.button :active {
   background-color: var(--red-dark) !important;
   border-color: var(--red-dark) !important;
 }
