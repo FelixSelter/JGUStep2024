@@ -11,7 +11,6 @@ import {
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import styles from "./App.module.css";
-import { height } from "@fortawesome/free-solid-svg-icons/fa0";
 
 export default function Layout({ children }: PropsWithChildren) {
   const [showOffcanvas, SetShowOffcanvas] = useState(false);
