@@ -46,6 +46,15 @@ export default function Layout({ children }: PropsWithChildren) {
 
   return (
     <>
+      <div
+        style={{
+          height: "calc(100vh - 60px)",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        {children}
+      </div>
       <Navbar
         style={{
           backgroundColor: "var(--red)",
@@ -197,15 +206,6 @@ export default function Layout({ children }: PropsWithChildren) {
           </Nav.Item>
         </Nav>
       </Navbar>
-      <div
-        style={{
-          height: "calc(100vh - 60px)",
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        {children}
-      </div>
     </>
   );
 }
