@@ -38,7 +38,10 @@ export default function Layout({ children }: PropsWithChildren) {
           display: "flex",
         }}
       >
-        <img src="/JGUStep2024/jgu.png" style={{ objectFit: "contain" }} />
+        <img
+          src="/JGUStep2024/jgu.png"
+          style={{ objectFit: "contain", maxWidth: "100vw" }}
+        />
         <ProgressBar now={0} className={styles.progress} />
       </div>
     );
@@ -112,7 +115,7 @@ export default function Layout({ children }: PropsWithChildren) {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                   <NavDropdown title="Sprache">
-                    <NavDropdown.Item href="/#" onClick={hideOffcanvas}>
+                    <NavDropdown.Item href="/" onClick={hideOffcanvas}>
                       Deutsch
                     </NavDropdown.Item>
                     <NavDropdown.Item onClick={hideOffcanvas} disabled>

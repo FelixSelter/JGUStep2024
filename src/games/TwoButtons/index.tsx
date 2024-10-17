@@ -31,12 +31,12 @@ export default function TwoButtonsGame() {
 
   const results: Record<"green" | "red", Record<"green" | "red", string>> = {
     green: {
-      green: "Ihr habt gewonnen!!!!",
-      red: "Du hast verloren :(",
+      green: "Du gewinnst 500k€",
+      red: "Du bekommst nichts",
     },
     red: {
-      green: "Du hast gewonnen ;)",
-      red: "Du gewinnst 2 Euro!!!!!?!!",
+      green: "Du gewinnst 1M€",
+      red: "Du gewinnst 2 Euro :/",
     },
   };
   const radios: { name: string; value: "red" | "green" }[] = [
