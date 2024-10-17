@@ -15,14 +15,6 @@
   background-color: white;
 }
 
-.nav:visited {
-  background-color: var(--red) !important;
-}
-
-.nav:active {
-  background-color: var(--red) !important;
-}
-
 @keyframes example {
   from {
     width: 0px;

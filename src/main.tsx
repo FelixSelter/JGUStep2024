@@ -17,6 +17,7 @@ import TwoButtonsGame from "./games/TwoButtons";
 import ForumPage from "./pages/ForumPage";
 import Impressum from "./pages/Impressum";
 import License from "./pages/License";
+import Sources from "./pages/Sources";
 
 const router = createHashRouter([
   {
@@ -66,6 +67,10 @@ const router = createHashRouter([
   {
     path: "/license",
     element: <License />,
+  },
+  {
+    path: "/sources",
+    element: <Sources />,
   },
 ]);
 

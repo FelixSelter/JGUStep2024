@@ -11,4 +11,5 @@
 .container {
   padding: 5vmin;
   text-align: justify;
+  overflow-y: scroll;
 }

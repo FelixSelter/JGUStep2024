@@ -18,7 +18,7 @@ export default function index({ title }: { title: string }) {
           marginBottom: "-50px",
           width: "100%",
           position: "relative",
-          top: "-1px",
+          top: "-2px",
         }}
       />
     </>

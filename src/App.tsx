@@ -3,7 +3,6 @@ import { Button, Modal, Nav, NavDropdown, ProgressBar } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import styles from "./App.module.css";
-import classNames from "classnames";
 
 export default function Layout({ children }: PropsWithChildren) {
   const [showOffcanvas, SetShowOffcanvas] = useState(false);
@@ -46,14 +45,11 @@ export default function Layout({ children }: PropsWithChildren) {
       >
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-        <Nav className="w-100" fill variant="pills" justify>
+        <Nav className="w-100" fill justify>
           <Nav.Item onClick={hideOffcanvas}>
             <Nav.Link
               href="/JGUStep2024/#"
-              className={classNames(
-                "d-flex justify-content-center align-items-center",
-                styles.nav
-              )}
+              className={"d-flex justify-content-center align-items-center"}
             >
               <img
                 src="/JGUStep2024/Home-NavBar.svg"
@@ -66,10 +62,7 @@ export default function Layout({ children }: PropsWithChildren) {
           <Nav.Item onClick={hideOffcanvas}>
             <Nav.Link
               href="/JGUStep2024/#glossary"
-              className={classNames(
-                "d-flex justify-content-center align-items-center",
-                styles.nav
-              )}
+              className={"d-flex justify-content-center align-items-center"}
             >
               <img
                 src="/JGUStep2024/Woerterbuch-NavBar.svg"
@@ -82,10 +75,7 @@ export default function Layout({ children }: PropsWithChildren) {
           <Nav.Item>
             <Nav.Link
               as="div"
-              className={classNames(
-                "d-flex justify-content-center align-items-center",
-                styles.nav
-              )}
+              className={"d-flex justify-content-center align-items-center"}
             >
               <img
                 onClick={() => SetShowOffcanvas(true)}
@@ -135,7 +125,7 @@ export default function Layout({ children }: PropsWithChildren) {
                   <Nav.Link href="/JGUStep2024/#forum">Q & A</Nav.Link>
                 </Nav.Item>
                 <Nav.Item onClick={hideOffcanvas}>
-                  <Nav.Link disabled>Quellen</Nav.Link>
+                  <Nav.Link href="/JGUStep2024/#sources">Quellen</Nav.Link>
                 </Nav.Item>
                 <Nav.Item onClick={hideOffcanvas}>
                   <Nav.Link href="/JGUStep2024/#license">Lizenz</Nav.Link>

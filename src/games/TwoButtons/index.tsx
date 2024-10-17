@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {
+  Accordion,
   Alert,
   Button,
   ButtonGroup,
@@ -8,6 +9,7 @@ import {
 } from "react-bootstrap";
 import Header from "../../components/Header";
 import styles from "./index.module.css";
+import RedAccordion from "../../components/RedAccordion";
 
 function delay(delay: number) {
   return new Promise((r) => {
@@ -59,7 +61,7 @@ export default function TwoButtonsGame() {
       <Header title="Split or Steal" />
       <div className={styles.container}>
         <p>
-          In diesem Spiel geht es darum, eine Millionen Euro zu gewinnen. Zwei
+          In diesem Spiel geht es darum, eine Million Euro zu gewinnen. Zwei
           Spielern werden 2 Buzzer zur Option gestellt.
         </p>
         <p>
@@ -74,15 +76,20 @@ export default function TwoButtonsGame() {
           ACHTUNG: Wenn beide Spieler, den roten Buzzer drücken, gewinnen beide
           einen Trostpreis von 2 Euro.
         </p>
+        <h6>Beschreibung:</h6>
         <p>
-          <h6>Beschreibung:</h6>
           In diesem Beispiel wird angenommen, dass sich beide Spieler überhaupt
           nicht kennen und nicht miteinander kommunizieren. Sie haben keinen
           Einfluss aufeinander bis auf den Fakt, dass sie die andere Person
           nicht kennen und einander nicht trauen.
           <br />
           <br />
-          In diesem Szenario gibt es drei Endergebnisse:
+          <p>
+            In der Spieltheorie werden Spiele oft graphisch dargestellt, um die
+            Analyse leichter zu machen. In diesem Szenario gibt es drei
+            Endergebnisse. Dieses Spiel lässt sich leicht als Tabelle
+            darstellen:
+          </p>
         </p>
         <Table striped bordered hover variant="dark">
           <thead>
@@ -159,16 +166,36 @@ export default function TwoButtonsGame() {
           <Alert variant="info" show={alertVisible}>
             {AT}
           </Alert>
-        </div>
-        <p>
+          <Accordion style={{ gridColumn: "1 / span 2" }}>
+            <RedAccordion title={"Erklärung"} eventKey="">
+              <p>
+                Offensichtlich ist die strategisch beste Kombination (S1-
+                Teilen, S2-Teilen) für beide Spieler besser als die Kombination
+                (S1-Steal, S2-Steal). Doch unter den beschriebenen Bedingungen
+                wäre „Teilen“ kein individuell rationales Verhalten, da beide
+                keinen bindenden Vertrag eingehen können. Folglich muss eine
+                Lösung so gestaltet sein, dass keiner der Spieler ein Interesse
+                daran hat, von ihr abzuweichen. Die Kombination, bei der beide
+                Teile erfüllt sind, hat diese Eigenschaft nicht. Angenommen
+                Spieler 2 teilt, dann profitiert Spieler 1 mehr, wenn er
+                stiehlt. Aber auch falls beide stehlen, ist es besser, wenn
+                Spieler 2 stiehlt. Das bedeutet, dass stehlen, unabhängig von
+                der Entscheidung von Spieler 2, immer besser ist als zu teilen.
+                Das gleiche gilt für Spieler 2. Somit ist es stehlen in diesem
+                Spiel eine strikt dominante Strategie, da dies die beste
+                Strategie für beide Spieler ist, unabhängig davon, was der
+                andere Spieler macht.
+              </p>
+            </RedAccordion>
+          </Accordion>
           <b>Fazit aus dem Spiel:</b>
-          <br />
-          "Split or Steal" demonstriert zentrale Konzepte der Spieltheorie wie
-          das Gefangenendilemma. Die Lehre daraus ist, dass individuelle
-          Rationalität oft zu suboptimalen Ergebnissen führt, wenn keine
-          Möglichkeit zur sicheren Kooperation besteht.
-          <br />
-        </p>
+          <p>
+            "Split or Steal" demonstriert zentrale Konzepte der Spieltheorie wie
+            das Gefangenendilemma. Die Lehre daraus ist, dass individuelle
+            Rationalität oft zu suboptimalen Ergebnissen führt, wenn keine
+            Möglichkeit zur sicheren Kooperation besteht.
+          </p>
+        </div>
       </div>
     </>
   );
