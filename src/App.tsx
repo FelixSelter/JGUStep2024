@@ -17,7 +17,7 @@ export default function Layout({ children }: PropsWithChildren) {
   const [showLangModal, setShowLangModal] = useState(false);
   const [_, forceRefresh] = useState(0);
   const [showHelpModal, setShowHelpModal] = useState<boolean>(false);
-  const gemeinheit = false;
+  const gemeinheit = true;
 
   const hideOffcanvas = () => SetShowOffcanvas(false);
 

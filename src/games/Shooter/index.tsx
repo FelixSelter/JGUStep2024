@@ -40,7 +40,7 @@ export default function Index() {
         <div style={{ display: "flex", justifyContent: "space-around" }}>
           <RedButton id="move">Gehen</RedButton>
           <RedButton id="shoot">Schießen</RedButton>
-          <RedButton id="reset">Starten</RedButton>
+          <RedButton id="reset">Restart</RedButton>
         </div>
         <b>
           Situation 1: Spieler 1 weiß, dass Spieler 2 im nächsten Zug nicht

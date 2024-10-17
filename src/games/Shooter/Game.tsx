@@ -119,6 +119,7 @@ function setup(p5: p5Types, canvasParentRef: Element) {
   p5.createCanvas(p5.windowWidth, p5.windowWidth / aspectRatio).parent(
     canvasParentRef
   );
+  initGame();
 }
 
 function draw(p5: p5Types) {

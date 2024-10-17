@@ -84,50 +84,8 @@ export default function TwoButtonsGame() {
           nicht kennen und einander nicht trauen.
           <br />
           <br />
-          <p>
-            In der Spieltheorie werden Spiele oft graphisch dargestellt, um die
-            Analyse leichter zu machen. In diesem Szenario gibt es drei
-            Endergebnisse. Dieses Spiel lässt sich leicht als Tabelle
-            darstellen:
-          </p>
         </p>
-        <Table striped bordered hover variant="dark">
-          <thead>
-            <tr>
-              <th>Endergebnisse</th>
-              <th>SP2 ➜ 🟢</th>
-              <th>SP2 ➜ 🔴</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>SP1 ➜ 🟢</td>
-              <td>
-                SP1 = <p className={styles.green}>500k</p>,
-                <br />
-                SP2 = <p className={styles.green}>500k</p>
-              </td>
-              <td>
-                SP1 = 0
-                <br />
-                SP2 = <p className={styles.red}>1MIL</p>
-              </td>
-            </tr>
-            <tr>
-              <td>SP1 ➜ 🔴</td>
-              <td>
-                SP1 = <p className={styles.red}>1MIL</p>,
-                <br />
-                SP2 = 0
-              </td>
-              <td>
-                SP1= 2€,
-                <br />
-                SP2 = 2€
-              </td>
-            </tr>
-          </tbody>
-        </Table>
+
         <div
           style={{
             display: "flex",
@@ -168,6 +126,49 @@ export default function TwoButtonsGame() {
           </Alert>
           <Accordion style={{ gridColumn: "1 / span 2" }}>
             <RedAccordion title={"Erklärung"} eventKey="">
+              <p>
+                In der Spieltheorie werden Spiele oft graphisch dargestellt, um
+                die Analyse leichter zu machen. In diesem Szenario gibt es drei
+                Endergebnisse. Dieses Spiel lässt sich leicht als Tabelle
+                darstellen:
+              </p>
+              <Table striped bordered hover variant="dark">
+                <thead>
+                  <tr>
+                    <th>Endergebnisse</th>
+                    <th>SP2 ➜ 🟢</th>
+                    <th>SP2 ➜ 🔴</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>SP1 ➜ 🟢</td>
+                    <td>
+                      SP1 = <p className={styles.green}>500k</p>,
+                      <br />
+                      SP2 = <p className={styles.green}>500k</p>
+                    </td>
+                    <td>
+                      SP1 = 0
+                      <br />
+                      SP2 = <p className={styles.red}>1MIL</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>SP1 ➜ 🔴</td>
+                    <td>
+                      SP1 = <p className={styles.red}>1MIL</p>,
+                      <br />
+                      SP2 = 0
+                    </td>
+                    <td>
+                      SP1= 2€,
+                      <br />
+                      SP2 = 2€
+                    </td>
+                  </tr>
+                </tbody>
+              </Table>
               <p>
                 Offensichtlich ist die strategisch beste Kombination (S1-
                 Teilen, S2-Teilen) für beide Spieler besser als die Kombination

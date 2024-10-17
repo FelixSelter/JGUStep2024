@@ -13,12 +13,10 @@ export default function index({ title }: { title: string }) {
         />
       </div>
       <img
-        src="/JGUStep2024/wave.svg"
+        src="/JGUStep2024/wave.png"
         style={{
-          marginBottom: "-50px",
           width: "100%",
           position: "relative",
-          top: "-2px",
         }}
       />
     </>
