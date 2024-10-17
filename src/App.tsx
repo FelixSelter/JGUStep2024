@@ -49,14 +49,14 @@ export default function Layout({ children }: PropsWithChildren) {
     <>
       <div
         style={{
-          height: "calc(100vh - 60px)",
+          height: "calc(100vh - 70px)",
           display: "flex",
           flexDirection: "column",
         }}
       >
         {children}
       </div>
-      <div style={{ height: "60px" }}>
+      <div style={{ height: "70px" }}>
         <Navbar
           style={{
             backgroundColor: "var(--red)",
