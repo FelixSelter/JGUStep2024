@@ -6,14 +6,14 @@ export default function index({ title }: { title: string }) {
       <div className={styles.header}>
         <span>{title}</span>
         <img
-          src="/logo.png"
+          src="/JGUStep2024/logo.png"
           style={{
             height: "15vmin",
           }}
         />
       </div>
       <img
-        src="/wave.svg"
+        src="/JGUStep2024/wave.svg"
         style={{
           marginBottom: "-50px",
           width: "100%",

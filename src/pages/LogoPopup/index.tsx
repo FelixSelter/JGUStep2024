@@ -1,7 +1,7 @@
 export default function Index() {
   return (
     <div>
-      <img src="jgu.png"></img>
+      <img src="/JGUStep2024/jgu.png"></img>
     </div>
   );
 }

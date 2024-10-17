@@ -18,43 +18,43 @@ import ForumPage from "./pages/ForumPage";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/JGUStep2024/",
     element: <Home />,
   },
   {
-    path: "/glossary",
+    path: "/JGUStep2024/glossary",
     element: <Glossary />,
   },
   {
-    path: "/learning",
+    path: "/JGUStep2024/learning",
     element: <Learning />,
   },
   {
-    path: "/game1",
+    path: "/JGUStep2024/game1",
     element: <Shooter />,
   },
   {
-    path: "/game2",
+    path: "/JGUStep2024/game2",
     element: <TwoButtonsGame />,
   },
   {
-    path: "/forum",
+    path: "/JGUStep2024/forum",
     element: <Forum />,
   },
   {
-    path: "/forum/:postId",
+    path: "/JGUStep2024/forum/:postId",
     element: <ForumPage />,
   },
   {
-    path: "/createpost",
+    path: "/JGUStep2024/createpost",
     element: <CreatePost />,
   },
   {
-    path: "/introduction",
+    path: "/JGUStep2024/introduction",
     element: <Introduction />,
   },
   {
-    path: "/nashequality",
+    path: "/JGUStep2024/nashequality",
     element: <NashEquality />,
   },
 ]);

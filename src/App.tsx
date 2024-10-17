@@ -28,7 +28,7 @@ export default function Layout({ children }: PropsWithChildren) {
           display: "flex",
         }}
       >
-        <img src="jgu.png" style={{ objectFit: "contain" }} />
+        <img src="/JGUStep2024/jgu.png" style={{ objectFit: "contain" }} />
         <ProgressBar now={0} className={styles.progress} />
       </div>
     );
@@ -48,11 +48,11 @@ export default function Layout({ children }: PropsWithChildren) {
         <Nav className="w-100" fill variant="pills" justify>
           <Nav.Item>
             <Nav.Link
-              href="/"
+              href="/JGUStep2024/"
               className="d-flex justify-content-center align-items-center"
             >
               <img
-                src="/Home-NavBar.svg"
+                src="/JGUStep2024/Home-NavBar.svg"
                 alt="Glossar"
                 style={{ cursor: "pointer", width: "7vw" }}
               />
@@ -61,11 +61,11 @@ export default function Layout({ children }: PropsWithChildren) {
 
           <Nav.Item>
             <Nav.Link
-              href="/glossary"
+              href="/JGUStep2024/glossary"
               className="d-flex justify-content-center align-items-center"
             >
               <img
-                src="/Woerterbuch-NavBar.svg"
+                src="/JGUStep2024/Woerterbuch-NavBar.svg"
                 alt="Glossar"
                 style={{ cursor: "pointer", width: "7vw" }}
               />
@@ -79,7 +79,7 @@ export default function Layout({ children }: PropsWithChildren) {
             >
               <img
                 onClick={handleShow}
-                src="/3-Punkte-NavBar.svg"
+                src="/JGUStep2024/3-Punkte-NavBar.svg"
                 alt="Menu"
                 style={{ cursor: "pointer", width: "7vw" }}
               />

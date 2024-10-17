@@ -8,7 +8,11 @@ export default function Index() {
     <>
       <Header title="SASTA" />
       <div className={styles.container}>
-        <RedButton size="lg" className={styles.button} href="/learning">
+        <RedButton
+          size="lg"
+          className={styles.button}
+          href="/JGUStep2024/learning"
+        >
           Lerninhalte
         </RedButton>
         <div>
@@ -23,10 +27,18 @@ export default function Index() {
             animated
           />
         </div>
-        <RedButton size="lg" className={styles.button} href="/glossary">
+        <RedButton
+          size="lg"
+          className={styles.button}
+          href="/JGUStep2024/glossary"
+        >
           Glossar
         </RedButton>
-        <RedButton size="lg" className={styles.button} href="/forum">
+        <RedButton
+          size="lg"
+          className={styles.button}
+          href="/JGUStep2024/forum"
+        >
           Forum
         </RedButton>
       </div>
