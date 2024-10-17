@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import Glossary from "./pages/Glossary";
 import Learning from "./pages/Learning";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import Shooter from "./games/Shooter";
 import Forum from "./pages/Forum";
 import CreatePost from "./pages/CreatePost";
@@ -15,47 +15,52 @@ import Introduction from "./pages/Introduction";
 import NashEquality from "./games/NashEquality";
 import TwoButtonsGame from "./games/TwoButtons";
 import ForumPage from "./pages/ForumPage";
+import Impressum from "./pages/Impressum";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
-    path: "/JGUStep2024/",
+    path: "/",
     element: <Home />,
   },
   {
-    path: "/JGUStep2024/glossary",
+    path: "/glossary",
     element: <Glossary />,
   },
   {
-    path: "/JGUStep2024/learning",
+    path: "/learning",
     element: <Learning />,
   },
   {
-    path: "/JGUStep2024/game1",
+    path: "/game1",
     element: <Shooter />,
   },
   {
-    path: "/JGUStep2024/game2",
+    path: "/game2",
     element: <TwoButtonsGame />,
   },
   {
-    path: "/JGUStep2024/forum",
+    path: "/forum",
     element: <Forum />,
   },
   {
-    path: "/JGUStep2024/forum/:postId",
+    path: "/forum/:postId",
     element: <ForumPage />,
   },
   {
-    path: "/JGUStep2024/createpost",
+    path: "/createpost",
     element: <CreatePost />,
   },
   {
-    path: "/JGUStep2024/introduction",
+    path: "/introduction",
     element: <Introduction />,
   },
   {
-    path: "/JGUStep2024/nashequality",
+    path: "/nashequality",
     element: <NashEquality />,
+  },
+  {
+    path: "/impressum",
+    element: <Impressum />,
   },
 ]);
 

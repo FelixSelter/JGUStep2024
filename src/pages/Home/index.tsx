@@ -11,7 +11,7 @@ export default function Index() {
         <RedButton
           size="lg"
           className={styles.button}
-          href="/JGUStep2024/learning"
+          href="/JGUStep2024/#learning"
         >
           Lerninhalte
         </RedButton>
@@ -30,14 +30,14 @@ export default function Index() {
         <RedButton
           size="lg"
           className={styles.button}
-          href="/JGUStep2024/glossary"
+          href="/JGUStep2024/#glossary"
         >
           Glossar
         </RedButton>
         <RedButton
           size="lg"
           className={styles.button}
-          href="/JGUStep2024/forum"
+          href="/JGUStep2024/#forum"
         >
           Forum
         </RedButton>

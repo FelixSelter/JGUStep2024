@@ -10,25 +10,25 @@ export default function Learning() {
         <ProgressItem
           title="Einführung"
           index={0}
-          href="/JGUStep2024/introduction"
+          href="/JGUStep2024/#introduction"
           completed={true}
         />
         <ProgressItem
           title="NASH Gleichgewicht"
           index={1}
           completed={false}
-          href="/JGUStep2024/nashequality"
+          href="/JGUStep2024/#nashequality"
         />
         <ProgressItem
           title="Split or Steal"
           index={2}
           completed={false}
-          href="/JGUStep2024/game2"
+          href="/JGUStep2024/#game2"
         />
         <ProgressItem
           title="Das Duell"
           index={3}
-          href="/JGUStep2024/game1"
+          href="/JGUStep2024/#game1"
           completed={false}
         />
         <ProgressItem

@@ -48,7 +48,7 @@ export default function Layout({ children }: PropsWithChildren) {
         <Nav className="w-100" fill variant="pills" justify>
           <Nav.Item>
             <Nav.Link
-              href="/JGUStep2024/"
+              href="/JGUStep2024/#"
               className="d-flex justify-content-center align-items-center"
             >
               <img
@@ -61,7 +61,7 @@ export default function Layout({ children }: PropsWithChildren) {
 
           <Nav.Item>
             <Nav.Link
-              href="/JGUStep2024/glossary"
+              href="/JGUStep2024/#glossary"
               className="d-flex justify-content-center align-items-center"
             >
               <img

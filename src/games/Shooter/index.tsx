@@ -1,20 +1,9 @@
-import { useEffect } from "react";
 import RedButton from "../../components/RedButton";
 import Header from "../../components/Header";
 import styles from "./index.module.css";
+import Game from "./Game";
 
 export default function Index() {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "game1.js";
-    script.defer = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <>
       <Header title="Das Duell" />
@@ -44,12 +33,14 @@ export default function Index() {
         <div
           id="canvasParent"
           style={{ width: "100vw", position: "relative", left: "-5vmin" }}
-        ></div>
+        >
+          <Game />
+        </div>
         <p id="stats"></p>
         <div style={{ display: "flex", justifyContent: "space-around" }}>
           <RedButton id="move">Gehen</RedButton>
           <RedButton id="shoot">Schießen</RedButton>
-          <RedButton id="reset">Zurücksetzen</RedButton>
+          <RedButton id="reset">Starten</RedButton>
         </div>
         <b>
           Situation 1: Spieler 1 weiß, dass Spieler 2 im nächsten Zug nicht
