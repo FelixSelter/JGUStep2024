@@ -17,6 +17,7 @@ export default function Layout({ children }: PropsWithChildren) {
   const [showLangModal, setShowLangModal] = useState(false);
   const [_, forceRefresh] = useState(0);
   const [showHelpModal, setShowHelpModal] = useState<boolean>(false);
+  const gemeinheit = false;
 
   const hideOffcanvas = () => SetShowOffcanvas(false);
 
@@ -107,39 +108,46 @@ export default function Layout({ children }: PropsWithChildren) {
                   <NavDropdown.Item onClick={hideOffcanvas} disabled>
                     Englisch
                   </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item>
-                    <NavLink onClick={() => setShowLangModal(true)}>
-                      Schweizerdeutsch
-                    </NavLink>
-                    <Modal
-                      show={showLangModal}
-                      onHide={() => setShowLangModal(false)}
-                    >
-                      <Modal.Header closeButton>
-                        <Modal.Title>Schweizerdeutsch</Modal.Title>
-                      </Modal.Header>
-                      <Modal.Body>
-                        <p>
-                          Wäge Ziitmangel händ mir leider kei schwiizerdütschi
-                          Übersetzig chönne implementiere. Bi Verstaahnisproblem
-                          wänd Si sich bitte bi folgende Kontaktadresse melde:
-                        </p>
-                        <br />
-                        <Table striped bordered hover>
-                          <tbody>
-                            <tr>
-                              <td>Nora</td>
-                              <td>Graber</td>
-                            </tr>
-                            <tr>
-                              <td colSpan={2}>ngraber@students.uni-mainz.de</td>
-                            </tr>
-                          </tbody>
-                        </Table>
-                      </Modal.Body>
-                    </Modal>
-                  </NavDropdown.Item>
+                  {gemeinheit && (
+                    <>
+                      <NavDropdown.Divider />
+                      <NavDropdown.Item>
+                        <NavLink onClick={() => setShowLangModal(true)}>
+                          Schweizerdeutsch
+                        </NavLink>
+                        <Modal
+                          show={showLangModal}
+                          onHide={() => setShowLangModal(false)}
+                        >
+                          <Modal.Header closeButton>
+                            <Modal.Title>Schweizerdeutsch</Modal.Title>
+                          </Modal.Header>
+                          <Modal.Body>
+                            <p>
+                              Wäge Ziitmangel händ mir leider kei
+                              schwiizerdütschi Übersetzig chönne implementiere.
+                              Bi Verstaahnisproblem wänd Si sich bitte bi
+                              folgende Kontaktadresse melde:
+                            </p>
+                            <br />
+                            <Table striped bordered hover>
+                              <tbody>
+                                <tr>
+                                  <td>Nora</td>
+                                  <td>Graber</td>
+                                </tr>
+                                <tr>
+                                  <td colSpan={2}>
+                                    ngraber@students.uni-mainz.de
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </Table>
+                          </Modal.Body>
+                        </Modal>
+                      </NavDropdown.Item>
+                    </>
+                  )}
                 </NavDropdown>
                 <Nav.Item>
                   <Nav.Link onClick={() => setShowHelpModal(true)}>
