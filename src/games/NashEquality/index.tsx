@@ -163,7 +163,7 @@ export default function Index() {
             behalten
           </RedButton>
           {state !== State.Original && (
-            <p>
+            <p style={{ textAlign: "left", gridColumn: "1 / span 2" }}>
               {examples[value].correct === state
                 ? "Das ist die schlauste Strategie"
                 : "Denk lieber nochmal nach"}
