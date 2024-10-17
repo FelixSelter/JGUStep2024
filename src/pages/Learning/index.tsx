@@ -14,16 +14,16 @@ export default function Learning() {
           completed={true}
         />
         <ProgressItem
-          title="NASH Gleichgewicht"
+          title="Split or Steal"
           index={1}
           completed={false}
-          href="/JGUStep2024/#nashequality"
+          href="/JGUStep2024/#game2"
         />
         <ProgressItem
-          title="Split or Steal"
+          title="NASH Gleichgewicht"
           index={2}
           completed={false}
-          href="/JGUStep2024/#game2"
+          href="/JGUStep2024/#nashequality"
         />
         <ProgressItem
           title="Das Duell"

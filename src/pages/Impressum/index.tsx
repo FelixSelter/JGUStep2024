@@ -12,13 +12,13 @@ export default function Impressum() {
         <br />
         <h5>Verantwortlich für den Inhalt:</h5>
         <p>
-          Vorname Nachname [Name der Universität] [Adresse der Universität]
-          [Postleitzahl und Ort]
+          Clara Jotzo, Felix Selter, Oliver Scholtka [JGU Mainz] [Saarstraße 21]
+          [55122 Mainz]
         </p>
         <br />
         <br />
         <h5>Kontakt:</h5>
-        <p>E-Mail: [deine E-Mail-Adresse]</p>
+        <p>E-Mail: [cjotzo@students.uni-mainz.de]</p>
         <br />
         <br />
         <h5>Universität und Studiengang:</h5>

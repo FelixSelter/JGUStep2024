@@ -190,10 +190,11 @@ export default function TwoButtonsGame() {
           </Accordion>
           <b>Fazit aus dem Spiel:</b>
           <p>
-            "Split or Steal" demonstriert zentrale Konzepte der Spieltheorie wie
-            das Gefangenendilemma. Die Lehre daraus ist, dass individuelle
-            Rationalität oft zu suboptimalen Ergebnissen führt, wenn keine
-            Möglichkeit zur sicheren Kooperation besteht.
+            "Split or Steal" demonstriert zentrale Konzepte der Spieltheorie.
+            Die Lehre daraus ist, dass man oft zu suboptimalen Ergebnissen
+            kommt, wenn keine Möglichkeit zur sicheren Kooperation besteht.
+            Außerdem lernt man, wie man Spiele graphisch darstellt, um die
+            Analyse zu erleichtern.
           </p>
         </div>
       </div>

@@ -2,3 +2,7 @@
   padding: 5vmin;
   overflow-y: scroll;
 }
+
+a {
+  color: black;
+}
