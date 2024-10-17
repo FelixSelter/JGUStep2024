@@ -1,4 +1,5 @@
 import Sketch from "react-p5";
+//@ts-expect-error desc
 import p5Types from "p5";
 import { useEffect } from "react";
 

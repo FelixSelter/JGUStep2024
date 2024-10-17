@@ -114,7 +114,7 @@ export default function Layout({ children }: PropsWithChildren) {
                   <Nav.Link>Lizenz</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link>Impressung</Nav.Link>
+                  <Nav.Link href="/impressum">Impressung</Nav.Link>
                 </Nav.Item>
               </Offcanvas.Body>
             </Offcanvas>
