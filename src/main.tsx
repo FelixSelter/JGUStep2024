@@ -59,7 +59,7 @@ const router = createHashRouter([
     element: <NashEquality />,
   },
   {
-    path: "/#impressum",
+    path: "/impressum",
     element: <Impressum />,
   },
 ]);

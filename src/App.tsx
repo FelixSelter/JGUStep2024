@@ -111,10 +111,10 @@ export default function Layout({ children }: PropsWithChildren) {
                   <Nav.Link>Quellen</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link>Lizenz</Nav.Link>
+                  <Nav.Link href="/JGUStep2024/#license">Lizenz</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link href="/impressum">Impressung</Nav.Link>
+                  <Nav.Link href="/JGUStep2024/#impressum">Impressum</Nav.Link>
                 </Nav.Item>
               </Offcanvas.Body>
             </Offcanvas>

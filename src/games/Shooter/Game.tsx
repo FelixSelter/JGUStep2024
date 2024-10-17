@@ -115,6 +115,7 @@ function h(h: number) {
 }
 
 function setup(p5: p5Types, canvasParentRef: Element) {
+  window.p5 = p5;
   p5.createCanvas(p5.windowWidth, p5.windowWidth / aspectRatio).parent(
     canvasParentRef
   );
@@ -171,14 +172,20 @@ function draw(p5: p5Types) {
   }
 }
 
-// function windowResized(p5: p5Types) {
-//   p5.resizeCanvas(p5.windowWidth, p5.windowWidth / aspectRatio);
-// }
+function windowResized() {
+  //@ts-expect-error desc
+  window.p5.resizeCanvas(
+    //@ts-expect-error desc
+    window.p5.windowWidth,
+    //@ts-expect-error desc
+    window.p5.windowWidth / aspectRatio
+  );
+}
 
 function clear() {
   const parent = document.getElementById("canvasParent")!.firstElementChild!;
   if (parent.childElementCount !== 0) {
-    for (let i = 1; i < parent.childElementCount; i++) {
+    for (let i = 0; i < parent.childElementCount - 1; i++) {
       parent.removeChild(parent.children[i]);
     }
   } else {
@@ -190,6 +197,12 @@ export default function Game() {
   useEffect(() => {
     document.getElementById("reset")!.onclick = initGame;
     clear();
+
+    addEventListener("resize", windowResized);
+
+    return () => {
+      removeEventListener("resize", windowResized);
+    };
   }, []);
 
   return <Sketch setup={setup} draw={draw} />;
