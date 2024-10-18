@@ -6,7 +6,6 @@ import {
   NavDropdown,
   NavLink,
   ProgressBar,
-  Table,
 } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
@@ -22,6 +21,7 @@ export default function Layout({ children }: PropsWithChildren) {
   useEffect(() => {
     setTimeout(() => {
       window.sessionStorage.showedLogoPopup = true;
+      //delete this comment later
       forceRefresh(1);
     }, 1000);
   }, []);
