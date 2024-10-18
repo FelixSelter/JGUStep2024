@@ -113,7 +113,7 @@ export default function Layout({ children }: PropsWithChildren) {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                   <NavDropdown title="Sprache">
-                    <NavDropdown.Item href="/#" onClick={hideOffcanvas}>
+                    <NavDropdown.Item href="/JGUStep2024/#" onClick={hideOffcanvas}>
                       Deutsch
                     </NavDropdown.Item>
                     <NavDropdown.Item onClick={hideOffcanvas} disabled>
