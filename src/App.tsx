@@ -74,7 +74,7 @@ export default function Layout({ children }: PropsWithChildren) {
               >
                 <img
                   src="/JGUStep2024/Home-NavBar.svg"
-                  alt="Glossar"
+                  alt="Home"
                   style={{ cursor: "pointer", width: "7vw" }}
                 />
               </Nav.Link>
