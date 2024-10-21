@@ -32,7 +32,7 @@ export default function Learning() {
           completed={false}
         />
         <ProgressItem
-          title="Kooroperative Spiele"
+          title="Kooperative Spiele"
           index={4}
           completed={false}
         />
