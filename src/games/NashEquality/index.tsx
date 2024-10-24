@@ -126,7 +126,7 @@ export default function Index() {
             }}
           >
             <option value="0">Beispiel 1</option>
-            <option value="1">Biespiel 2</option>
+            <option value="1">Beispiel 2</option>
             <option value="2">Beispiel 3</option>
           </Form.Select>
           <Form.Group className="mb-3">
