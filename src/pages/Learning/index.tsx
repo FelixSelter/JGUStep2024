@@ -31,18 +31,14 @@ export default function Learning() {
           href="/JGUStep2024/#game1"
           completed={false}
         />
-        <ProgressItem
-          title="Kooperative Spiele"
-          index={4}
-          completed={false}
-        />
+        <ProgressItem title="Kooperative Spiele" index={4} completed={false} />
         <ProgressItem
           title="Nicht-Kooroperative Spiele"
           index={5}
           completed={false}
         />
         <ProgressItem
-          title="Evelutionär Spieltheorie"
+          title="Evolutionäre Spieltheorie"
           index={6}
           completed={false}
         />
